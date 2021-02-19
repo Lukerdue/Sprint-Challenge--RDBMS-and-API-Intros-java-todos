@@ -73,7 +73,7 @@ public class UserController
      * @see UserService#save(User) UserService.save(User)
      */
     @PostMapping(value = "/user",
-        consumes = {"application/json"})
+        consumes = {"application/json"}, produces={"application/json"})
     public ResponseEntity<?> addNewUser(
         @Valid
         @RequestBody

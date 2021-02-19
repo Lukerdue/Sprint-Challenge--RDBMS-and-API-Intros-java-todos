@@ -35,6 +35,6 @@ public class TodosServiceImpl implements TodosService{
     public void markComplete(long todoid) {
         Todos todo = todorepo.findById(todoid)
                 .orElseThrow(()->new EntityNotFoundException("Todo with id "+todoid+" not found!"));
-        todo.setCompleted(!todo.isCompleted());
+        todo.setCompleted(true);
     }
 }
