@@ -23,9 +23,22 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain your database schema, including how your database is "normalized".
-2. Explain how you connected your API to a database.
-3. Explain the flow of data from the client through the backend system and back to the client.
-4. Explain how the CRUD operations work in your application, including any custom SQL that was used.
+
+This database is comprised of 2 tables. One Users table and one Todos table. There is a one to many relationship between users and todos.
+The data is normalized by foreign keys, so the todos table has a column with a user ID to reference user in the users table;
+
+3. Explain how you connected your API to a database.
+
+The api is connected to the database with the controllers and repositories (with services in between)
+
+5. Explain the flow of data from the client through the backend system and back to the client.
+
+So if the client say wanted to mark a Todo as complete,it would make a patch passing the id as a paramater in the path, the database would use the repository to find that todo 
+with that id and use the services marComplete method to mark it complete, and then would return to the client;
+
+7. Explain how the CRUD operations work in your application, including any custom SQL that was used.
+
+There isn't -currently- any custom queries used, I didn't need any to meet MVP this time, but the rest are used with the api to go through the controllers and execute their respective functions. Delete, of course, deletes stuff, Patch , for this database, you don't have to pass any body data into it, it just uses the markComplete method, Post created new objects using the save methods.... etc etc. 
 
 ## Instructions
 
